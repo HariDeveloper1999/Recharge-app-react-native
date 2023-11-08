@@ -8,8 +8,8 @@ import { Alert } from "react-native";
 
 
 
+
 export default function Recharge({route,navigation}){
-    console.log("navigation1234",route)
    
     const [listActive,setListActive]=useState(false);
     const [selectedval,setSelectedVal]=useState('');
@@ -38,6 +38,9 @@ export default function Recharge({route,navigation}){
                 `Your ${mobNum} Sim is Recharged Successfully`, 
                  `You Recharged plan amount is ${amount || route?.params?.amount}`,
             )
+
+          
+
         }else{
             Alert.alert(
                 "Please provide valid data"
