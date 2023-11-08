@@ -4,7 +4,6 @@ import { useEffect, useState } from "react"
 import Btn from "./btn"
 import {useNavigation} from "@react-navigation/native"
 import { Alert } from "react-native";
-import SnackbarComponent from "react-native-snackbar-component"
 import {LOGDATA} from "../constants/data"
 
 
@@ -19,12 +18,7 @@ export default function  Home(props){
     const [snackbarMsg,setSnackbarMsg]=useState("")
 
 
-    useEffect(()=>{
-
-     setTimeout(()=>{
-     isSnackbar && setIsSnackbar(false)
-     },3000)
-    },[isSnackbar])
+   
 
    
 
@@ -51,14 +45,15 @@ export default function  Home(props){
         console.log(validataion,"1234")
 
         if(validataion){
-            setSnackbarMsg("Login Successfully")
-            setIsSnackbar(true)
+            // setSnackbarMsg("Login Successfully")
+            // setIsSnackbar(true)
             navigation.navigate("Recharge")
            
         }
         else{
-            setSnackbarMsg("Please Enter correct details")
-            setIsSnackbar(true)
+            Alert.alert("Please Enter correct details");
+            // setSnackbarMsg("Please Enter correct details")
+            // setIsSnackbar(true)
         }
     }
     else{
@@ -71,13 +66,14 @@ export default function  Home(props){
             }
            
            LOGDATA.push(data)
-           setSnackbarMsg("Your account is created Please do login")
-           setIsSnackbar(true)
+        //    setSnackbarMsg("Your account is created Please do login")
+        //    setIsSnackbar(true)
            navigation.navigate("Login")
         }
         else{
-            setSnackbarMsg("Please Enter correct details")
-            setIsSnackbar(true)
+            Alert.alert("Please Enter correct details")
+            // setSnackbarMsg("Please Enter correct details")
+            // setIsSnackbar(true)
         }
     }
 
@@ -145,7 +141,7 @@ export default function  Home(props){
             }
            
         </Text>
-        {
+        {/* {
             isSnackbar &&
              <SnackbarComponent  
              visible={isSnackbar}
@@ -155,7 +151,7 @@ export default function  Home(props){
            
              
              />
-        }
+        } */}
          
 
        </View>

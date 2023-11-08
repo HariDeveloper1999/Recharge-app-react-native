@@ -13,8 +13,8 @@ export default function Recharge({route,navigation}){
    
     const [listActive,setListActive]=useState(false);
     const [selectedval,setSelectedVal]=useState('');
-    const [amount,setAmount]=useState();
-    const [mobNum,setMobnum]=useState()
+    const [amount,setAmount]=useState("");
+    const [mobNum,setMobnum]=useState("")
 
     const pressHandler=(value)=>{
         setSelectedVal(value)
