@@ -3,7 +3,6 @@ import { RECHARGE_PLANS } from "../constants/data";
 export default function Plans({navigation}){
 
     const cardPresshandler=(item)=>{
-        console.log("item",item)
          navigation.navigate("Recharge",{amount:item.amount})
     }
      

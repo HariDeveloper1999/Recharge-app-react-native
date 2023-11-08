@@ -8,7 +8,12 @@ import Recharge from "./screens/Recharge";
 import Plans from './screens/Plans';
 
 export default function App() {
-  const Stack=createNativeStackNavigator()
+  const Stack=createNativeStackNavigator();
+  if (!__DEV__) {
+    for (const iterator of Object.keys(global.console)) {
+      global.console[iterator] = () => 0;
+    }
+  }
   return (
     <>
        <StatusBar style="auto" />
